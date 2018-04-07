@@ -144,3 +144,19 @@ a:hover
 {
 	color: red !important;
 }
+
+.box
+{
+	text-align: center;
+	background-color: #F5F5F5;
+	padding: 2.5% 2.5% 5% 2.5%;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px grey;
+}
+
+.box>.btn 
+{
+	postion: relative;
+	text-align: center;
+	margin: 2.5% auto;
+}
