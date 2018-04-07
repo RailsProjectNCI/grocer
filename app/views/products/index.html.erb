@@ -15,6 +15,9 @@
     </li>
   </div>
   <div class="row">
+    <% if @products.count ==0 %>
+    <h3>There are no products currently in this category</h3>
+    <% else %>
     <% @products.each do |product| %>
     <div class="col-sm-4 thumbnail text-center padding">
       <h3><%= product.title %></h3>
@@ -29,6 +32,7 @@
           <% end %>
         <% end %>
     </div>
+    <% end %>
     <% end %>
   </div>     
   <br>
