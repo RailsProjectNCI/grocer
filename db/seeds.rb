@@ -1,6 +1,6 @@
 User.create!([
-  {email: "person1@gmail.com", password: "password", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-07 09:15:28", last_sign_in_at: "2018-04-07 08:44:59", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Person", lname: "One", dob: "2018-04-07", admin: nil},
-  {email: "admin@grocerystore.ie", password: "password", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-07 09:27:15", last_sign_in_at: "2018-04-07 08:47:04", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Admin", lname: "User", dob: "2018-04-07", admin: true}
+  {email: "person1@gmail.com", encrypted_password: "$2a$11$SQfnXDmG1D1TVj/RyWamk.3uv/tMfKoe9Lqh8NX1FMAuDJRl05t.C", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-07 09:15:28", last_sign_in_at: "2018-04-07 08:44:59", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Person", lname: "One", dob: "2018-04-07", admin: nil},
+  {email: "admin@grocerystore.ie", encrypted_password: "$2a$11$jXsx.0iHIPj0uHaRHkDBZOf6Fr/7JbR06RdW5xmDlSlxeoSHHJKsS", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-07 09:27:15", last_sign_in_at: "2018-04-07 08:47:04", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Admin", lname: "User", dob: "2018-04-07", admin: true}
 ])
 Category.create!([
   {name: "Biscuits"},
