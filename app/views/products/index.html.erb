@@ -1,6 +1,19 @@
 
   <p id="notice"><%= notice %></p>
   <h1>Products</h1>
+  <div class="category">
+    <li class="dropdown">
+      <button class="dropdown-toggle" data-toggle="dropdown" href="#">Category
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu" >
+        <% Category.all.each do|category| %>
+        <li class="<%= 'active' if params[:category] == category.name %>">
+          <%= link_to category.name, products_path(category: category.name)%>
+        </li>
+        <% end %>
+      </ul>
+    </li>
+  </div>
   <div class="row">
     <% @products.each do |product| %>
     <div class="col-sm-4 thumbnail text-center padding">

@@ -10,8 +10,15 @@ class ProductsController < ApplicationController
     end 
   end
 
-  def index
-    @products = Product.all
+  def index    
+      if params[:search]
+        @products = Product.search(params[:search]).order("title ASC").paginate(page: params[:page], per_page:9)      
+      elsif params[:category]
+        @category_id = Category.find_by(name: params[:category]).id
+        @products = Product.where(:category_id => @category_id).order("title ASC").paginate(page: params[:page], per_page:9)
+      else
+        @products = Product.all.order("title ASC").paginate(page: params[:page], per_page:9)
+    end 
   end
 
   # GET /products/1
@@ -22,16 +29,19 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = current_user.products.build
+    @categories = Category.all.map{ |c| [c.name, c.id]}
   end
 
   # GET /products/1/edit
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = current_user.products.build(product_params)
+    @product.category_id = params[:category_id]
 
     respond_to do |format|
       if @product.save
@@ -47,6 +57,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @categories = Category.all.map{ |c| [c.name, c.id] }
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -76,6 +87,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :price, :desc, :image_url)
+      params.require(:product).permit(:title, :price, :desc, :image_url, :category_id)
     end
 end

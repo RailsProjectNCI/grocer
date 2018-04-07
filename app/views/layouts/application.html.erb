@@ -38,6 +38,12 @@
                 <li><%= link_to "About", pages_about_path, class:"white bold" %></li>
                 <li><%= link_to "Products", products_path, class:"white bold"  %></li>
                 <li><%= link_to "Delivery", pages_delivery_path, class:"white bold"  %></li>
+                <li class="search">
+                  <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Search products" %>
+                  <%= submit_tag "Search"%>
+                <% end %>
+                </li>
               </ul>
           </div>
         </div>
