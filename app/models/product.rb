@@ -3,6 +3,6 @@ class Product < ApplicationRecord
 	belongs_to :category
 
 	def self.search(search)
-		where("title::string LIKE ?", "%#{search}%")
+		where("title ILIKE ?", "%#{search}%")
 	end
 end
