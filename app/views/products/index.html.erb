@@ -1,19 +1,15 @@
-
-  <p id="notice"><%= notice %></p>
- 
    <% if user_signed_in? %>
         <% if current_user.admin? %>
             <%= link_to 'New Product', new_product_path, class:"btn btnRed right"%>
         <% end %>
   <% end %>
-
-  <h1>Products <span><p>Listing 9 of <%= @products.count%> products</p></span></h1>
-  
+  <h1>Browse Products <span><p>Listing 9 of <%= @products.count%> products</p></span></h1>
   <div class="category">
     <li class="dropdown">
       <button class="dropdown-toggle" data-toggle="dropdown" href="#">Category
       <span class="caret"></span></button>
       <ul class="dropdown-menu" >
+        <li class="text-center"><%= link_to "-- All Products --", products_path(@products)%></li>
         <% Category.all.each do|category| %>
         <li class="<%= 'active' if params[:category] == category.name %>">
           <%= link_to category.name, products_path(category: category.name)%>
