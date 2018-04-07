@@ -6,7 +6,7 @@
     <div class="col-sm-4 thumbnail text-center padding">
       <h3><%= product.title %></h3>
       <%= link_to (image_tag product.image_url, :style=> "height:150px"), product, class:"img-responsive"%>
-      <h3><%= product.price %></h3>
+      <h3>€ <%= product.price %></h3>
       <h4><%= product.desc %></h4>
       <%= link_to 'Show', product, class:"btn btnRed" %>
       <%= link_to 'Edit', edit_product_path(product), class:"btn btnRed" %>
