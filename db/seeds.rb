@@ -1,6 +1,7 @@
 User.create!([
-  {email: "person1@gmail.com", encrypted_password: "$2a$11$SQfnXDmG1D1TVj/RyWamk.3uv/tMfKoe9Lqh8NX1FMAuDJRl05t.C", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-07 09:15:28", last_sign_in_at: "2018-04-07 08:44:59", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Person", lname: "One", dob: "2018-04-07", admin: nil},
-  {email: "admin@grocerystore.ie", encrypted_password: "$2a$11$jXsx.0iHIPj0uHaRHkDBZOf6Fr/7JbR06RdW5xmDlSlxeoSHHJKsS", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-07 09:27:15", last_sign_in_at: "2018-04-07 08:47:04", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Admin", lname: "User", dob: "2018-04-07", admin: true}
+  {email: "person1@gmail.com", encrypted_password: "$2a$11$IuotLVtvYnFeoQ0B//qq8OffqZu5RUt5l4/rmIWQqkoHnZNDVFIu.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2018-04-07 20:10:02", last_sign_in_at: "2018-04-07 09:15:28", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Person", lname: "One", dob: "2018-04-07", admin: nil},
+  {email: "admin@grocerystore.ie", encrypted_password: "$2a$11$MF8vB8EIBV9dkTG9swTHnOjhAhJLuzkEa5HVkR4uS4bsI5Fleq0tm", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2018-04-07 20:06:39", last_sign_in_at: "2018-04-07 17:49:37", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Admin", lname: "User", dob: "2018-04-07", admin: true},
+  {email: "test2@gmail.com", encrypted_password: "$2a$11$ENRDNmUL.892Zetfu3QiYeYqddmyMwhlqgZ0.YzLWrwEFqC0fn7mS", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2018-04-07 18:03:37", last_sign_in_at: "2018-04-07 18:03:37", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Person", lname: "Two", dob: "2018-04-07", admin: nil}
 ])
 Category.create!([
   {name: "Biscuits"},
@@ -56,4 +57,9 @@ Product.create!([
   {title: " Roma Baby Pasta Shells 500G", price: "1.69", desc: "Cooks in 7 mins\r\n100% durum wheat pasta\r\nSource of protein\r\nLow fat", image_url: "pasta.jpg", user_id: 2, category_id: 23},
   {title: "Sweet Potatoes Loose", price: "0.49", desc: "These subtle sweet potatoes are also great for mashing, roasting and wedges.\r\nDistinctively sweet and soft.", image_url: "potato.jpg", user_id: 2, category_id: 34},
   {title: "Nolans Prawns", price: "3.5", desc: "Nolans Prawn Cocktail Regular 170G", image_url: "prawns.jpg", user_id: 2, category_id: 14}
+])
+Review.create!([
+  {rating: 5, user_id: 3, product_id: 3},
+  {rating: 3, user_id: 3, product_id: 12},
+  {rating: 3, user_id: 1, product_id: 3}
 ])
