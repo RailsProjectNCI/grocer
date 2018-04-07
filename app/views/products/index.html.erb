@@ -22,6 +22,7 @@
     <div class="col-sm-4 thumbnail text-center padding">
       <h3><%= product.title %></h3>
       <%= link_to (image_tag product.image_url, :style=> "height:150px"), product, class:"img-responsive"%>
+      <div class="avg-rating" data-score="<%= @average_review %>"></div>
       <h3>€ <%= product.price %></h3>
       <h4><%= product.desc %></h4>
        <% if user_signed_in? %>
@@ -41,3 +42,27 @@
             <%= link_to 'New Product', new_product_path, class:"btn btnRed" %>
         <% end %>
   <% end %>
+
+  <%= will_paginate @products, renderer:BootstrapPagination::Rails %>
+
+<script>
+  $('.review-rating').raty({
+    readOnly:true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
+
+<script>
+ $('.avg-rating').raty({
+    path: '/assets/',
+    readOnly:true,
+    score: function(){
+      return($(this).attr('data-score'));
+    }
+  })
+
+$('.avg-rating').raty('reload');
+</script>
