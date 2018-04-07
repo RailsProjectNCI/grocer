@@ -28,6 +28,7 @@
               </li>
               <% if user_signed_in? %>
                 <li><%= link_to " Log Out", destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-out white bold"%></li>
+                <li><%= link_to " My Account", user_path(current_user.id), class:"glyphicon glyphicon-pencil white bold" %></li>
               <% else %>
                 <li> <%= link_to " Log In", new_user_session_path, class:"glyphicon glyphicon-log-in white bold"%> </li>
               <% end %>

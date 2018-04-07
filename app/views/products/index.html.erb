@@ -1,6 +1,14 @@
 
   <p id="notice"><%= notice %></p>
+ 
+   <% if user_signed_in? %>
+        <% if current_user.admin? %>
+            <%= link_to 'New Product', new_product_path, class:"btn btnRed right"%>
+        <% end %>
+  <% end %>
+
   <h1>Products</h1>
+  
   <div class="category">
     <li class="dropdown">
       <button class="dropdown-toggle" data-toggle="dropdown" href="#">Category
@@ -14,6 +22,7 @@
       </ul>
     </li>
   </div>
+
   <div class="row">
     <% if @products.count ==0 %>
     <h3>There are no products currently in this category</h3>
@@ -25,6 +34,7 @@
       <div class="avg-rating" data-score="<%= @average_review %>"></div>
       <h3>€ <%= product.price %></h3>
       <h4><%= product.desc %></h4>
+      <div class="row">
        <% if user_signed_in? %>
         <% if current_user.admin? %>
           <%= link_to 'Show', product, class:"btn btnRed" %>
@@ -32,18 +42,15 @@
           <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btnRed" %>
           <% end %>
         <% end %>
+      </div>
     </div>
     <% end %>
     <% end %>
   </div>     
   <br>
-  <% if user_signed_in? %>
-        <% if current_user.admin? %>
-            <%= link_to 'New Product', new_product_path, class:"btn btnRed" %>
-        <% end %>
-  <% end %>
-
-  <%= will_paginate @products, renderer:BootstrapPagination::Rails %>
+  <div class="text-center">
+    <%= will_paginate @products, renderer:BootstrapPagination::Rails %>
+  </div>
 
 <script>
   $('.review-rating').raty({
