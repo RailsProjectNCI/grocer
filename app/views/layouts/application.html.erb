@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   </head>
   <body>
-    <%= yield %>
+  	<div class="container">
+  		<p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+    	<%= yield %>
+    </div>
   </body>
 </html>
