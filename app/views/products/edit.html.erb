@@ -1,6 +1,14 @@
-<h1>Editing Product</h1>
-
-<%= render 'form', product: @product %>
-
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<title>Edit Product | Grocery Store</title>
+<div class="container">
+	<h1>Edit Product Listing</h1>
+		<%= simple_form_for @product, :html => { :multipart => true } do |f| %>
+		  <%= f.input :title, label: "Product Name" %>
+		  <%= f.input :price %>
+		  <%= f.input :desc %>
+		  <%= f.input :image_url %>
+		  <br/>
+		  <br/>
+		  <%= f.button :submit %>
+		<% end %>
+	<%= link_to "Back", products_path, class:"btn btnRed" %>
+</div>
