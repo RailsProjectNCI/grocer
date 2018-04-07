@@ -28,9 +28,9 @@
 
     <h3>Cancel my account</h3>
 
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-    <%= link_to "Back", :back %>
+    <p>Unhappy? <br/><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btnRed" %></p>
+    <br/>
+    <%= link_to "Back", :back, class:"btn btnRed" %>
     <div class="col-sm-4"></div>
   </div>
 </div>

@@ -1,3 +1,7 @@
+User.create!([
+  {email: "person1@gmail.com", encrypted_password: "$2a$11$SQfnXDmG1D1TVj/RyWamk.3uv/tMfKoe9Lqh8NX1FMAuDJRl05t.C", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2018-04-07 08:44:59", last_sign_in_at: "2018-04-07 08:44:59", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Person", lname: "One", dob: "2018-04-07"},
+  {email: "admin@grocerystore.ie", encrypted_password: "$2a$11$jXsx.0iHIPj0uHaRHkDBZOf6Fr/7JbR06RdW5xmDlSlxeoSHHJKsS", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2018-04-07 08:47:04", last_sign_in_at: "2018-04-07 08:47:04", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Admin", lname: "User", dob: "2018-04-07"}
+])
 Product.create!([
   {title: "7up", price: "1.49", desc: "Lemon & Lime Flavoured Soft Drink", image_url: "7up.jpg"},
   {title: "Heinz Beans 4 Pack", price: "4.2", desc: "Heinz tinned beans. Package contains 4x600g tins", image_url: "beans.jpg"},
