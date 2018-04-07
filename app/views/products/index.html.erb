@@ -33,7 +33,8 @@
       <%= link_to (image_tag product.image_url, :style=> "height:150px"), product, class:"img-responsive"%>
       <div class="avg-rating" data-score="<%= @average_review %>"></div>
       <h3>€ <%= product.price %></h3>
-      <h4><%= product.desc %></h4>
+      <%= link_to "View Product", product, class:"btn btnRed" %>
+      <a href="#" class ="btn btnRed"> Add to Cart</a>
       <div class="row">
        <% if user_signed_in? %>
         <% if current_user.admin? %>
