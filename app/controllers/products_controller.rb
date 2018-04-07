@@ -11,9 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def index    
-      if params[:search]
-        @products = Product.search(params[:search]).order("title ASC")     
-      elsif params[:category]
+     if params[:category]
         @category_id = Category.find_by(name: params[:category]).id
         @products = Product.where(:category_id => @category_id).order("title ASC")
       else
