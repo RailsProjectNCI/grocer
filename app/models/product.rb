@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
 	belongs_to :user
 	belongs_to :category
-	has_many :rating
+	has_many :reviews
 
 	def self.search(search)
 		where("title ILIKE ?", "%#{search}%")

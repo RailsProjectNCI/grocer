@@ -1,32 +1,51 @@
-
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row thumbnail">
+    <div class="col-sm-4 text-center">
+      <br/>
+      <br/>
+      <%= link_to (image_tag @product.image_url, :style=> "height:300px"), @product%>     
+        <div class="avg-rating" data-score="<%= @average_review %>"></div>
+        <h6>Based on <%= @product.reviews.count %> reviews</h6>
+        </div>
+        <div class="sol-sm-8 text-center">
+          <br/>
+          <br/>
+          <br/>
+          <h2><%= @product.title %></h2>
+          <h5>Category: <%= @product.category.name %></h5>
+          <p><%= @product.desc %></p>
+          <h3> € <%= @product.price %> </h3>
+          <a href="#" class="btn btnRed">Add to cart</a>
+           <%= link_to "Rate Product", new_product_review_path(@product), class: "btn btnRed"%>
+          <% if user_signed_in? %>
+              <% if current_user.admin? %>
+                <%= link_to 'Edit', edit_product_path(@product), class:"btn btnRed" %>
+              <% end %>
+          <% end %> |
+          <%= link_to 'Back', products_path, class:"btn btnRed" %>
+        </div>
+    </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<script>
+  $('.review-rating').raty({
+    readOnly:true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+<script>
+ $('.avg-rating').raty({
+    path: '/assets/',
+    readOnly:true,
+    score: function(){
+      return($(this).attr('data-score'));
+    }
+  })
 
-<p>
-  <strong>Desc:</strong>
-  <%= @product.desc %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<%= link_to "Rate", new_product_rating_path(@product) %>
-
-<% if user_signed_in? %>
-        <% if current_user.admin? %>
-			<%= link_to 'Edit', edit_product_path(@product), class:"btn btnRed" %>|
-			<%= link_to 'Back', products_path, class:"btn btnRed" %>
-		<% end %>
-<% end %>
-
+$('.avg-rating').raty('reload');
+</script>
