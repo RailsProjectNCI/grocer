@@ -44,7 +44,7 @@
     <div class="col-sm-4 thumbnail text-center padding">
       <h3><%= product.title %></h3>
       <%= link_to (image_tag product.image_url, :style=> "height:150px"), product, class:"img-responsive"%>
-      <div class="avg-rating" data-score="<%= @average_review %>"></div>
+      <div class="avg-rating" data-score="<%= product.reviews.average(:rating)%>"></div>
       <h3>€ <%= product.price %></h3>
       <%= link_to "View Product", product, class:"btn btnRed" %>
       <a href="#" class ="btn btnRed"> Add to Cart</a>

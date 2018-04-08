@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy] 
   before_action :ensure_admin, only: [:add, :edit, :destroy]
+ 
   # GET /products
   # GET /products.json
 
@@ -19,6 +20,7 @@ class ProductsController < ApplicationController
       else
         @products = Product.all.order("title ASC").paginate(page: params[:page], per_page: 6) 
       end 
+
   end
 
   # GET /products/1
