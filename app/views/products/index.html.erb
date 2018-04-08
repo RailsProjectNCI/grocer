@@ -3,7 +3,13 @@
             <%= link_to 'New Product', new_product_path, class:"btn btnRed right"%>
         <% end %>
   <% end %>
-  <h1>Browse Products <span><p>Listing 6 of <%= @products.count%> products</p></span></h1>
+  <% if @products.count==0%>
+    <h1>No products returned</h1>
+    <% elsif @products.count==1 %>
+      <h1>Showing <%= @products.count%> Product</p></span></h1>
+  <% else %>
+    <h1>Showing <%= @products.count%> Products</p></span></h1>
+  <% end %>
   <div class="category">
     <li class="dropdown">
       <button class="dropdown-toggle" data-toggle="dropdown" href="#">Category
@@ -21,8 +27,19 @@
 
   <div class="row">
     <% if @products.count ==0 %>
-    <h3>There are no products currently in this category</h3>
+      <% if params[:search]%>
+        <h3>Your search for retuned no results</h3>
+        <h4>Try using product names</h4>
+       <% else %>
+        <h3>There are currently no products stocked in this category. Please check back soon!</h3> 
+      <% end %>
     <% else %>
+    <% if params[:category]%>
+      <h3><i>Only showing Category: </i> <%= params[:category] %></h3>
+    <% end %>
+      <% if params[:search] %>
+        <h3>Showing result of search for: "<%= params[:search]%>"<h3>
+          <% end %>
     <% @products.each do |product| %>
     <div class="col-sm-4 thumbnail text-center padding">
       <h3><%= product.title %></h3>
