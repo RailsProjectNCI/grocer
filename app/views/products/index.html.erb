@@ -44,8 +44,12 @@
       <h3><i>Only showing Category: </i> <%= params[:category] %></h3>
     <% end %>
       <% if params[:search] %>
-        <h3>Search results for: "<%= params[:search]%>"<h3>
-          <% end %>
+        <%if params[:search] == ""%>
+          <h3>Lisitng All Products</h3>
+        <% else %>
+          <h3>Search results for: "<%= params[:search]%>"<h3>
+        <% end%>     
+      <% end %>
     <% @products.each do |product| %>
     <div class="col-sm-4 thumbnail text-center padding">
       <h3><%= product.title %></h3>
