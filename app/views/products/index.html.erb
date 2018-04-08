@@ -28,7 +28,7 @@
   <div class="row">
     <% if @products.count ==0 %>
       <% if params[:search]%>
-        <h3>Your search for retuned no results</h3>
+        <h3>Your search for "<%= params[:search]%>" returned no results</h3>
         <h4>Try using product names</h4>
        <% else %>
         <h3>There are currently no products stocked in this category. Please check back soon!</h3> 
