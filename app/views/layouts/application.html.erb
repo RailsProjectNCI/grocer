@@ -24,7 +24,9 @@
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-left">
               <li>
+                <% unless user_signed_in? %>
                 <%= link_to " Register", new_user_registration_path, class:"glyphicon glyphicon-user white bold"%>
+                <% end %>
               </li>
               <% if user_signed_in? %>
                 <li><%= link_to " Log Out", destroy_user_session_path, method: :delete, class:"glyphicon glyphicon-log-out white bold"%></li>
