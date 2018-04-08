@@ -4,6 +4,6 @@ class Product < ApplicationRecord
 	has_many :reviews
 
 	def self.search(search)
-		where("title LIKE ?", "%#{search}%")
+		where("title ILIKE ?", "%#{search}%")
 	end
 end
