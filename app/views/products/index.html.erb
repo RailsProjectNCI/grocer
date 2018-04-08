@@ -1,6 +1,6 @@
    <% if user_signed_in? %>
         <% if current_user.admin? %>
-            <%= link_to 'New Product', new_product_path, class:"btn btnRed right"%>
+            <%= link_to 'Add New Product', new_product_path, class:"btn btnRed right"%>
         <% end %>
   <% end %>
   <% if @products.count==0%>
@@ -18,7 +18,7 @@
       <% end %>
     </li>
     <li class="dropdown">
-      <button class="dropdown-toggle" data-toggle="dropdown" href="#">Category
+      <button class="dropdown-toggle" data-toggle="dropdown" href="#">Or List by Category
       <span class="caret"></span></button>
       <ul class="dropdown-menu" >
         <li class="text-center"><%= link_to "-- All Products --", products_path(@products)%></li>
