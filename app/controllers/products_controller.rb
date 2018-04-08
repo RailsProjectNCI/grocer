@@ -12,13 +12,13 @@ class ProductsController < ApplicationController
 
   def index    
       if params[:search]
-        @products = Product.search(params[:search]).order("title").page(params[:page])     
+        @products = Product.search(params[:search]).order("title ASC").paginate(page: params[:page], per_page: 6)   
       elsif params[:category]
         @category_id = Category.find_by(name: params[:category]).id
-        @products = Product.where(:category_id => @category_id).order("title").page(params[:page])
+        @products = Product.where(:category_id => @category_id).order("title ASC").paginate(page: params[:page], per_page: 6) 
       else
-        @products = Product.all.order("title").page(params[:page])
-    end 
+        @products = Product.all.order("title ASC").paginate(page: params[:page], per_page: 6) 
+      end 
   end
 
   # GET /products/1

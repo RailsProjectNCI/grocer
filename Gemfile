@@ -17,7 +17,8 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'simple_form', '~> 3.5', '>= 3.5.1'
 gem 'devise', '~> 4.4', '>= 4.4.3'
-gem 'kaminari'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'seed_dump', '~> 3.2', '>= 3.2.4'
 
 group :development, :test do

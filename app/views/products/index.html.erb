@@ -3,7 +3,7 @@
             <%= link_to 'New Product', new_product_path, class:"btn btnRed right"%>
         <% end %>
   <% end %>
-  <h1>Browse Products <span><p>Listing 9 of <%= @products.count%> products</p></span></h1>
+  <h1>Browse Products <span><p>Listing 6 of <%= @products.count%> products</p></span></h1>
   <div class="category">
     <li class="dropdown">
       <button class="dropdown-toggle" data-toggle="dropdown" href="#">Category
@@ -46,7 +46,7 @@
   </div>     
   <br>
   <div class="text-center">
-    <%= paginate @products %>
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails, inner_window: 1, outer_window: 0 %>
   </div>
 
 <script>
