@@ -6,7 +6,7 @@
 
 #aboutContainer {
   position: relative;
-  font-family: 'Nunito', sans-serif !important;
+  margin-bottom: 10%;
 }
 
 #aboutImg {
@@ -27,7 +27,7 @@
   transition: .5s ease;
   background-color: rgba(1,1,1,.7);
   h1 {
-  	text-align: center;
+    text-align: center;
   }
 }
 
@@ -38,10 +38,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 #aboutContainer:hover .overlay {
   opacity: 1;
 }
 
+/*at smaller screens */
+
+@media only screen and (max-width: 900px) {
+  
+}
+
+@media only screen and (max-width: 900px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+  #hide {
+    display: none;
+  }
+} 

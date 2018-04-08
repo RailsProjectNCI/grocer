@@ -5,7 +5,12 @@
       <br/>
       <%= link_to (image_tag @product.image_url, :style=> "height:300px"), @product%>     
         <div class="avg-rating" data-score="<%= @average_review %>"></div>
-        <h6>Based on <%= @product.reviews.count %> reviews</h6>
+        <% if @product.reviews.count == 1 %>
+           <h6>Based on <%= @product.reviews.count %> review</h6>
+          <% else %>
+            <h6>Based on <%= @product.reviews.count %> reviews</h6>
+          <% end %>
+          <%= link_to "Rate Product", new_product_review_path(@product), class: "btn btnRed"%>
         </div>
         <div class="sol-sm-8 text-center">
           <br/>
@@ -16,7 +21,6 @@
           <p><%= @product.desc %></p>
           <h3> € <%= @product.price %> </h3>
           <a href="#" class="btn btnRed">Add to cart</a>
-           <%= link_to "Rate Product", new_product_review_path(@product), class: "btn btnRed"%>
           <% if user_signed_in? %>
               <% if current_user.admin? %>
                 <%= link_to 'Edit', edit_product_path(@product), class:"btn btnRed" %>
