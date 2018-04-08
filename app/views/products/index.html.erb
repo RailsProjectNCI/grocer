@@ -11,6 +11,12 @@
     <h1>Showing <%= @products.count%> Products</p></span></h1>
   <% end %>
   <div class="category">
+    <li class="search">
+      <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search products" %>
+      <%= submit_tag "Search"%>
+      <% end %>
+    </li>
     <li class="dropdown">
       <button class="dropdown-toggle" data-toggle="dropdown" href="#">Category
       <span class="caret"></span></button>
