@@ -1,6 +1,6 @@
 User.create!([
-  {email: "person1@gmail.com", password: "password", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 6, current_sign_in_at: "2018-04-07 22:26:45", last_sign_in_at: "2018-04-07 22:19:57", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Persons", lname: "One", dob: "2018-04-07", admin: nil},
-  {email: "admin@grocerystore.ie", password: "adminpassword", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 9, current_sign_in_at: "2018-04-08 01:10:34", last_sign_in_at: "2018-04-07 22:55:51", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Admin", lname: "User", dob: "2018-04-07", admin: true},
+  {email: "person1@gmail.com", password: "password", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2018-04-08 22:48:22", last_sign_in_at: "2018-04-07 22:26:45", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Persons", lname: "One", dob: "2018-04-07", admin: nil},
+  {email: "admin@grocerystore.ie", password: "password", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 10, current_sign_in_at: "2018-04-08 22:46:39", last_sign_in_at: "2018-04-08 01:10:34", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Admin", lname: "User", dob: "2018-04-07", admin: true},
   {email: "test2@gmail.com", password: "password", reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2018-04-07 18:03:37", last_sign_in_at: "2018-04-07 18:03:37", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", fname: "Person", lname: "Two", dob: "2018-04-07", admin: nil}
 ])
 Category.create!([
@@ -100,5 +100,8 @@ Product.create!([
 Review.create!([
   {rating: 5, user_id: 3, product_id: 3},
   {rating: 3, user_id: 3, product_id: 12},
-  {rating: 3, user_id: 1, product_id: 3}
+  {rating: 3, user_id: 1, product_id: 3},
+  {rating: 3, user_id: 1, product_id: 22},
+  {rating: 2, user_id: 1, product_id: 22},
+  {rating: 4, user_id: 1, product_id: 3}
 ])
