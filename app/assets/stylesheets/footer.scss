@@ -1,7 +1,6 @@
 #myFooter {
     background-color: #3c3d41;
     color: white;
-    padding-top: 30px;
 }
 
 #myFooter .footer-copyright {
@@ -51,6 +50,9 @@
 
 #myFooter a:hover,
 #myFooter a:focus {
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #333333;
     text-decoration: none;
     color: white;
 }
