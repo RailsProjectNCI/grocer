@@ -46,7 +46,7 @@
     <% end %>
       <% if params[:search] %>
         <%if params[:search] == ""%>
-          <h3>Lisitng All Products</h3>
+          <h3>Listing All Products</h3>
         <% else %>
           <h3>Search results for: "<%= params[:search]%>"<h3>
         <% end%>     
@@ -58,7 +58,8 @@
       <div class="avg-rating" data-score="<%= product.reviews.average(:rating)%>"></div>
       <h3>€ <%= product.price %></h3>
       <%= link_to "View Product", product, class:"btn btnRed" %>
-      <a href="#" class ="btn btnRed"> Add to Cart</a>
+      <!--<%= link_to "Add to Cart", cart_path(product.id), class:"btn btnRed" %>-->
+      <a class="btn btnRed"href="/cart/<%= product.id %>">Add to Cart</a>
       <div class="row">
        <% if user_signed_in? %>
         <% if current_user.admin? %>
