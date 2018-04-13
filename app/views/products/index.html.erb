@@ -54,12 +54,11 @@
     <% @products.each do |product| %>
     <div class="col-sm-4 thumbnail text-center padding">
       <h3><%= product.title %></h3>
-      <%= link_to (image_tag product.image_url, :style=> "height:150px"), product, class:"img-responsive"%>
+      <%= link_to (image_tag product.image_url, :style=> "height:150px"), product, class:"img-responsive" %>
       <div class="avg-rating" data-score="<%= product.reviews.average(:rating)%>"></div>
       <h3>€ <%= product.price %></h3>
       <%= link_to "View Product", product, class:"btn btnRed" %>
-      <!--<%= link_to "Add to Cart", cart_path(product.id), class:"btn btnRed" %>-->
-      <a class="btn btnRed"href="/cart/<%= product.id %>">Add to Cart</a>
+      <a class="btn btnRed" href="/cart/<%= product.id %>">Add to Cart</a>
       <div class="row">
        <% if user_signed_in? %>
         <% if current_user.admin? %>
