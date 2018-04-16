@@ -46,4 +46,39 @@ class CartController < ApplicationController
         @cart = {}
       end
     end
+
+    def increase
+      id = params[:id]
+      cart = session[:cart]
+      cart[id] += 1
+      redirect_to cart_path
+    end
+
+    def reduce
+      id = params[:id]
+      cart = session[:cart]
+      if cart[id] > 0
+        cart[id] -= 1
+      end
+      redirect_to cart_path
+    end
+
+    def remove
+      id = params[:id]
+      cart = session[:cart]
+      if cart[id] 
+        cart[id] = nil
+      end
+      redirect_to cart_path
+    end
+
+    def checkout      
+      session[:cart] = nil
+      redirect_to root_path
+      flash[:notice] = "Your items are on the way!"
+    end
+
+    def showCheckout
+      redirect_to checkoutSuccess
+    end
 end

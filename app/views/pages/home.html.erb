@@ -11,7 +11,7 @@
                 <%= image_tag("1.jpeg", :alt => "rss feed") %>
               	<div class="carousel-caption">
               		<h1>Grocery Store</h1>
-              		<h4>All Your Favourite Groceries in one place</h4>
+              		<h4 id="hide">All Your Favourite Groceries in one place</h4>
               		<%= link_to "Browse Products", products_path, class:"btn btnRed" %>
               	</div> 
             </div>
@@ -21,7 +21,7 @@
               	<%= image_tag("2.jpeg", :alt => "rss feed") %>
              	<div class="carousel-caption">
              		<h1>You Order. We Deliver</h1>
-                  <h4>View Delivery Area</h4>
+                  <h4 id="hide">View Delivery Area</h4>
                   <%= link_to "Delivery", pages_delivery_path, class:"btn btnRed" %>
               	</div>            
             </div> 
@@ -31,7 +31,7 @@
               <%= image_tag("3.jpeg", :alt => "rss feed") %> 
               <div class="carousel-caption">
                 <h1>Become a member</h1>
-                  <h4>Register, and use your logiin for quicker transactions</h4>
+                  <h4 id="hide">Register, and use your logiin for quicker transactions</h4>
                   <%= link_to "Register",  new_user_registration_path, class:"btn btnRed" %>
               </div>            
             </div> 

@@ -15,7 +15,7 @@
   height: auto;
 }
 
-.overlay {
+.aboutOverlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -38,17 +38,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  p {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
 }
 
-#aboutContainer:hover .overlay {
+#aboutContainer:hover .aboutOverlay {
   opacity: 1;
 }
 
 /*at smaller screens */
 
-@media only screen and (max-width: 900px) {
-  
-}
 
 @media only screen and (max-width: 900px) {
 
@@ -57,5 +58,9 @@
 @media only screen and (max-width: 550px) {
   #hide {
     display: none;
+  }
+  #aboutTxt p{
+    font-size: .8em;
+    line-height: .8;
   }
 } 
