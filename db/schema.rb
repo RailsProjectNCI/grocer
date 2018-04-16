@@ -10,12 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408023634) do
+ActiveRecord::Schema.define(version: 20180416184026) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "product_id"
+    t.integer "order_id"
+    t.integer "user_id"
+    t.index ["order_id"], name: "index_inventories_on_order_id"
+    t.index ["product_id"], name: "index_inventories_on_product_id"
+    t.index ["user_id"], name: "index_inventories_on_user_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.decimal "subtotal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -27,14 +56,6 @@ ActiveRecord::Schema.define(version: 20180408023634) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "category_id"
-  end
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "product_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -61,7 +82,7 @@ ActiveRecord::Schema.define(version: 20180408023634) do
     t.string "fname"
     t.string "lname"
     t.date "dob"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
