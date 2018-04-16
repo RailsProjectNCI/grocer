@@ -48,6 +48,10 @@
   opacity: 1;
 }
 
+#show {
+  display: none;
+}
+
 /*at smaller screens */
 
 
@@ -58,6 +62,9 @@
 @media only screen and (max-width: 550px) {
   #hide {
     display: none;
+  }
+  #show {
+    display: block;
   }
   #aboutTxt p {
     font-size: .8em;
